@@ -1,0 +1,137 @@
+<%= form_for(@cliente) do |f| %>
+  <% if @cliente.errors.any? %>
+    <div id="error_explanation">
+         <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+<%= javascript_include_tag “prototype” %>
+      <ul>
+      <% @cliente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :conjuge %><br>
+    <%= f.text_field :conjuge %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br>
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro %>
+  </div>
+  <div class="field">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep %>
+  </div>
+  <div class="field">
+
+<div class="field">
+<%= f.label :estado %></br>
+<%= f.collection_select :estado, Estado.order(:nome), :id,  :nome,  include_blank: true %>
+</div>
+
+<div clas="field">
+<%= f.label :cidade %></br>
+<%= grouped_collection_select :cidade, Cidade.all(:estado_id) %>%>
+</div>
+  <div class="field">
+    <%= f.label :tresidencial %><br>
+    <%= f.text_field :tresidencial %>
+  </div>
+  <div class="field">
+    <%= f.label :tcelular %><br>
+    <%= f.text_field :tcelular %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :rg %><br>
+    <%= f.text_field :rg %>
+  </div>
+  <div class="field">
+    <%= f.label :evento %><br>
+    <%= f.check_box :evento %>
+  </div>
+  <div class="field">
+    <%= f.label :horarioFesta %><br>
+    <%= f.time_select :horarioFesta %>
+  </div>
+  <div class="field">
+    <%= f.label :duracaoFesta %><br>
+    <%= f.time_select :duracaoFesta %>
+  </div>
+  <div class="field">
+    <%= f.label :diaSemana %><br>
+    <%= f.number_field :diaSemana %>
+  </div>
+  <div class="field">
+    <%= f.label :cortesia %><br>
+    <%= f.check_box :cortesia %>
+  </div>
+  <div class="field">
+    <%= f.label :valorConsumacao %><br>
+    <%= f.text_field :valorConsumacao %>
+  </div>
+  <div class="field">
+    <%= f.label :ItensAvulsos %><br>
+    <%= f.number_field :ItensAvulsos %>
+  </div>
+  <div class="field">
+    <%= f.label :dataEvento %><br>
+    <%= f.text_field :dataEvento %>
+  </div>
+  <div class="field">
+    <%= f.label :qtdeCriancas %><br>
+    <%= f.number_field :qtdeCriancas %>
+  </div>
+  <div class="field">
+    <%= f.label :qtdeAdultos %><br>
+    <%= f.number_field :qtdeAdultos %>
+  </div>
+  <div class="field">
+    <%= f.label :tema %><br>
+    <%= f.number_field :tema %>
+  </div>
+  <div class="field">
+    <%= f.label :gerarContrato %><br>
+    <%= f.check_box :gerarContrato %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br>
+    <%= f.text_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :nDocumento %><br>
+    <%= f.text_field :nDocumento %>
+  </div>
+  <div class="field">
+    <%= f.label :desconto %><br>
+    <%= f.text_field :desconto %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada %><br>
+    <%= f.text_field :entrada %>
+  </div>
+  <div class="field">
+    <%= f.label :formaPagamento %><br>
+    <%= f.text_field :formaPagamento %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_field :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

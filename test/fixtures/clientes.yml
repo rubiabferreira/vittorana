@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  conjuge: MyString
+  endereco: MyString
+  bairro: MyString
+  cep: MyString
+  estado: MyString
+  cidade: MyString
+  tresidencial: MyString
+  tcelular: MyString
+  cpf: MyString
+  rg: MyString
+  evento: false
+  horarioFesta: 2015-03-19 21:17:22
+  duracaoFesta: 2015-03-19 21:17:22
+  diaSemana: 1
+  cortesia: false
+  valorConsumacao: 1.5
+  ItensAvulsos: 1
+  dataEvento: 2015-03-19
+  qtdeCriancas: 1
+  qtdeAdultos: 1
+  tema: 1
+  gerarContrato: false
+  valor: 1.5
+  nDocumento: MyString
+  desconto: 1.5
+  entrada: 1.5
+  formaPagamento: MyString
+  obs: MyString
+
+two:
+  nome: MyString
+  conjuge: MyString
+  endereco: MyString
+  bairro: MyString
+  cep: MyString
+  estado: MyString
+  cidade: MyString
+  tresidencial: MyString
+  tcelular: MyString
+  cpf: MyString
+  rg: MyString
+  evento: false
+  horarioFesta: 2015-03-19 21:17:22
+  duracaoFesta: 2015-03-19 21:17:22
+  diaSemana: 1
+  cortesia: false
+  valorConsumacao: 1.5
+  ItensAvulsos: 1
+  dataEvento: 2015-03-19
+  qtdeCriancas: 1
+  qtdeAdultos: 1
+  tema: 1
+  gerarContrato: false
+  valor: 1.5
+  nDocumento: MyString
+  desconto: 1.5
+  entrada: 1.5
+  formaPagamento: MyString
+  obs: MyString
