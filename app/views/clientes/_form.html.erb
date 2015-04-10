@@ -32,12 +32,13 @@
     <%= f.text_field :cep %>
   </div>
   <div class="field">
-    <%= f.label :estado_id %><br>
-    <%= f.number_field :estado_id %>
+    <%= f.label :estado %><br>
+    <%= f.collection_select(:estado, Estado.all, :id, :nome, prompt: true)%>
   </div>
   <div class="field">
-    <%= f.label :cidade_id %><br>
-    <%= f.number_field :cidade_id %>
+    <%= f.label :cidade%><br>
+    grouped_collection_select(:city, :country_id, @continents, :countries, :name, :id, :name)
+    <%= f.grouped_collection_select(:cidade, :estado_id@cidades, :cidades, :id, :nome, :estado_id)%>
   </div>
   <div class="field">
     <%= f.label :tresidencial %><br>
