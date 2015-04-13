@@ -1,14 +1,84 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Vittorana</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Vittorana" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+<nav class="top-bar" data-topbar role="navigation" data-options="is_hover: true">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Vittorana</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon" data-options="is_hover: true"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+ <!-- Left Nav Section -->
+    <ul class="left">
+
+      <li class="has-dropdown" data-options="is_hover: false">
+        <a href="#">Clientes</a>
+        <ul class="dropdown">
+           <li class="active"><a href="#">Cadastro</a></li>
+           <li class="active"><a href="#">Contratos</a></li>
+           <li class="active"><a href="#">Relatórios</a></li>
+        </ul>
+      </li>
+    </ul>
+    </ul>
+ <ul class="left">
+     <li class="has-dropdown" data-options="is_hover: false">
+        <a href="#">Financeiro</a>
+        <ul class="dropdown">
+          <li class="active"><a href="#">Fornecedores</a></li>
+           <li class="active"><a href="#">Contas a Pagar</a></li>
+           <li class="active"><a href="#">Contas a Receber</a></li>
+           <li class="active"><a href="#">Relatórios</a></li>
+        </ul>
+      </li>
+    </ul>
+    </ul>
+
+<ul class="left">
+     <li class="has-dropdown" data-options="is_hover: false">
+        <a href="#">Agenda & Eventos</a>
+        <ul class="dropdown">
+           <li class="active"><a href="#">Cadastrar Evento</a></li>
+           <li class="active"><a href="#">Consultar</a></li>
+           <li class="active"><a href="#">Cadastrar Temas</a></li>
+           <li class="active"><a href="#">Relatórios</a></li>
+        </ul>
+      </li>
+    </ul>
+    </ul>
+
+<ul class="left">
+     <li class="has-dropdown" data-options="is_hover: false">
+        <a href="#">Fluxo de Caixa</a>
+        <ul class="dropdown">
+           <li class="active"><a href="#">Caixa</a></li>
+           <li class="active"><a href="#">Relatórios</a></li>
+
+        </ul>
+      </li>
+    </ul>
+    </ul>
+
+
+  </section>
+</nav>
+
+    <%= yield %>
+
+  </body>
 </html>

@@ -1,3 +1,20 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#cliente_estado').change(function(){
+      $.getJSON("/estado/" + $(this).val() + '/cidades.json', function(data) {
+        $('#cliente_cidade').empty();
+        $.each(data, function(i,item){
+          $('#cliente_cidade').append('<option value="' + item.cidade.id + '">' + item.cidade.nome + '</option>');
+        });
+      });
+    });
+
+  });
+</script>
+
+
+
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
@@ -11,124 +28,129 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+  <div class="row">
+  <%= f.label :nome %><br>
+  <%= f.text_field :nome %>
   </div>
-  <div class="field">
+
+   <div class="row", placeholder="large-4.columns" >
     <%= f.label :conjuge %><br>
     <%= f.text_field :conjuge %>
   </div>
-  <div class="field">
+  <div class="large-4 columns" >
     <%= f.label :endereco %><br>
     <%= f.text_field :endereco %>
   </div>
-  <div class="field">
+  <div class="large-4 columns" >
     <%= f.label :bairro %><br>
     <%= f.text_field :bairro %>
   </div>
-  <div class="field">
+  <div class="large-2 columns" >
     <%= f.label :cep %><br>
     <%= f.text_field :cep %>
   </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.collection_select(:estado, Estado.all, :id, :nome, prompt: true)%>
+  <div class="large-4 columns">
+    <%= f.label :estado %><br />
+    <%= f.collection_select :estado, Estado.all, :id, :nome, {:prompt => true} %>
   </div>
-  <div class="field">
-    <%= f.label :cidade%><br>
-    grouped_collection_select(:city, :country_id, @continents, :countries, :name, :id, :name)
-    <%= f.grouped_collection_select(:cidade, :estado_id@cidades, :cidades, :id, :nome, :estado_id)%>
+  <div class="large-4 columns">
+    <%= f.label :cidade %><br />
+    <%= @cliente.estado.nil? ? (raw '<select id="cliente_cidade"
+nome="cliente[cidade]" type="text"/></select>') :
+(f.collection_select :cidade, @cliente.estado.try(:cidade), :id,
+:nome) %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :tresidencial %><br>
     <%= f.text_field :tresidencial %>
   </div>
-  <div class="field">
+    <div class="large-4 columns">
     <%= f.label :tcelular %><br>
     <%= f.text_field :tcelular %>
   </div>
-  <div class="field">
+    <div class="large-4 columns">
     <%= f.label :cpf %><br>
     <%= f.text_field :cpf %>
   </div>
-  <div class="field">
+    <div class="large-4 columns">
     <%= f.label :rg %><br>
     <%= f.text_field :rg %>
   </div>
-  <div class="field">
+  <div class="large-6 columns">
     <%= f.label :evento %><br>
     <%= f.check_box :evento %>
   </div>
-  <div class="field">
+ <div class="large-4 columns">
     <%= f.label :horario_festa %><br>
     <%= f.time_select :horario_festa %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :duracao_festa %><br>
     <%= f.text_field :duracao_festa %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :dia_semana %><br>
     <%= f.number_field :dia_semana %>
   </div>
-  <div class="field">
+  <div class="large-6 columns">
     <%= f.label :cortesia %><br>
     <%= f.check_box :cortesia %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :valor_consumacao %><br>
     <%= f.text_field :valor_consumacao %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :itens_avulsos %><br>
     <%= f.number_field :itens_avulsos %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :data_evento %><br>
     <%= f.date_select :data_evento %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :qtde_criancas %><br>
     <%= f.number_field :qtde_criancas %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :qtde_adultos %><br>
     <%= f.number_field :qtde_adultos %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :tema %><br>
     <%= f.number_field :tema %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :gerar_contrato %><br>
     <%= f.check_box :gerar_contrato %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :valor %><br>
     <%= f.text_field :valor %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :num_documento %><br>
     <%= f.text_field :num_documento %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :desconto %><br>
     <%= f.text_field :desconto %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :entrada %><br>
     <%= f.text_field :entrada %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :forma_pagamento %><br>
     <%= f.text_field :forma_pagamento %>
   </div>
-  <div class="field">
+  <div class="large-4 columns">
     <%= f.label :obs %><br>
     <%= f.text_area :obs %>
   </div>
-  <div class="actions">
+  <div class="large-4 columns">
+  <div class="button round">
     <%= f.submit %>
+    </div>
   </div>
 <% end %>
