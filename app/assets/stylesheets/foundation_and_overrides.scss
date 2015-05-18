@@ -621,10 +621,10 @@ $default-float: left;
 // 11. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-form-classes: $include-html-classes;
+$include-html-form-classes: $include-html-classes;
 
 // We use this to set the base for lots of form spacing and positioning styles
-// $form-spacing: rem-calc(16);
+$form-spacing: rem-calc(36);
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
@@ -633,7 +633,7 @@ $default-float: left;
 // $form-label-line-height: 1.5;
 // $form-label-font-color: scale-color($black, $lightness: 30%);
 // $form-label-small-transform: capitalize;
-// $form-label-bottom-margin: 0;
+$form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
@@ -650,11 +650,11 @@ $default-float: left;
 // $input-include-glowing-effect: true;
 
 // We use these to style the fieldset border and spacing.
-// $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
-// $fieldset-border-color: $gainsboro;
-// $fieldset-padding: rem-calc(20);
-// $fieldset-margin: rem-calc(18 0);
+$fieldset-border-style: solid;
+$fieldset-border-width: 100px;
+$fieldset-border-color: black;
+$fieldset-padding: rem-calc(200);
+$fieldset-margin: rem-calc(200 20);
 
 // We use these to style the legends when you use them
 // $legend-bg: $white;

@@ -6,6 +6,7 @@ class CreateClientes < ActiveRecord::Migration
       t.string :endereco
       t.string :bairro
       t.string :cep
+      t.string :email
       t.integer :estado_id
       t.integer :cidade_id
       t.string :tresidencial

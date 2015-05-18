@@ -16,4 +16,12 @@
 //= require turbolinks
 //= require_tree .
 
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
+
+
 $(function(){ $(document).foundation(); });
+
+$("#campoData").mask("99/99/9999");

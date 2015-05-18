@@ -1,0 +1,1 @@
+json.extract! @estado, :id, :sigla, :nome, :capital

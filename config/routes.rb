@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'clientes#index'
 
-
+  get 'estados/:id/cidades.json' => "cidades#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
