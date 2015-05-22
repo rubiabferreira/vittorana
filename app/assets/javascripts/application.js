@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
+
+
 $(function(){ $(document).foundation(); });
 
-$("#campoData").mask("99/99/9999");

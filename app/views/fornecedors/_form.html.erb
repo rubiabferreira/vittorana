@@ -1,0 +1,112 @@
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $('#fornecedor_estado').change(function(){
+      $.getJSON("/estados/" + $(this).val() + '/cidades.json', function(data) {
+        $('#fornecedor_cidade').empty();
+        $.each(data, function(i,item){
+        $('#fornecedor_cidade').append('<option value="' + item.cidade.id + '">' + item.cidade.nome + '</option>');
+        });
+      });
+    });
+
+  });
+
+</script>
+
+<%= form_for(@fornecedor) do |f| %>
+  <% if @fornecedor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fornecedor.errors.count, "error") %> prohibited this fornecedor from being saved:</h2>
+
+      <ul>
+      <% @fornecedor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<form align="center" placeholder = "large-12.columns">
+<fieldset class = "row" >
+  <legend> Cadastro de Fornecedores </legend>
+<br>
+<br>
+
+  <div class="large-6 columns">
+    <%= f.label :nomefantasia %><br>
+    <%= f.text_field :nomefantasia %>
+  </div>
+   <div class="large-6 columns">
+    <%= f.label :razaosocial %><br>
+    <%= f.text_field :razaosocial %>
+  </div>
+   <div class="large-4 columns">
+    <%= f.label :endereco %><br>
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :estado %><br>
+    <%= f.collection_select :estado, Estado.all, :id, :nome, {:prompt => true} %>
+  </div>
+ <div class="large-6 columns">
+    <%= f.label :cidade %><br>
+    <%= @fornecedor.estado.nil? ? (raw '<select id="cliente_cidade"
+nome="cliente[cidade]" type="text"/></select>') :
+(f.collection_select :cidade, @fornecedor.estado.try(:cidade), :id,
+:nome) %>
+</div>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :tcomercial %><br>
+    <%= f.text_field :tcomercial %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :tcelular %><br>
+    <%= f.text_field :tcelular %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :cnpj %><br>
+    <%= f.text_field :cnpj %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :ie %><br>
+    <%= f.text_field :ie %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :im %><br>
+    <%= f.text_field :im %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :site %><br>
+    <%= f.text_field :site %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.label :categoria %><br>
+    <%= f.collection_select :categoria, Categorium.all, :id, :tipo, {:prompt => true} %>
+  </div>
+  <br />
+  <br />
+  <br />
+
+  <div class = "large-6 columns">
+    <%= f.submit %>
+  </div>
+  </form>
+  </fieldset>
+
+
+<% end %>

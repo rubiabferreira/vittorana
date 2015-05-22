@@ -6,9 +6,9 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Vittorana" %></title>
 
-    <%= stylesheet_link_tag    "application"  %>
-    <%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
     <%= csrf_meta_tags %>
   </head>
 
@@ -17,7 +17,7 @@
 <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: true">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Vittorana</a></h1>
+      <h1><a href="#clientes">Vittorana</a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon" data-options="is_hover: true"><a href="#"><span>Menu</span></a></li>
@@ -41,7 +41,7 @@
      <li class="has-dropdown" data-options="is_hover: false">
         <a href="#">Financeiro</a>
         <ul class="dropdown">
-          <li class="active"><a href="#">Fornecedores</a></li>
+          <li class="active"><a href="#fornecedors">Fornecedores</a></li>
            <li class="active"><a href="#">Contas a Pagar</a></li>
            <li class="active"><a href="#">Contas a Receber</a></li>
            <li class="active"><a href="#">Relatórios</a></li>
