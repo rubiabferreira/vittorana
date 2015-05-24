@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :clientes
+  resources :clientes, path_names: { new: "novo", edit: "editar" }
 
   get 'estados/:id/cidades' => 'estados#cidades', as: :cidades_do_estado
   # The priority is based upon order of creation: first created -> highest priority.
