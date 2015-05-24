@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :fornecedores
-  resources :categorias
+  resources :fornecedores, path_names: { new: "novo", edit: "editar" }
+  resources :categorias, path_names: { new: "novo", edit: "editar" }
   resources :clientes, path_names: { new: "novo", edit: "editar" }
 
   get 'estados/:id/cidades' => 'estados#cidades', as: :cidades_do_estado
