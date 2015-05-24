@@ -1,0 +1,77 @@
+<%= form_for(@fornecedor) do |f| %>
+  <% if @fornecedor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fornecedor.errors.count, "error") %> prohibited this fornecedor from being saved:</h2>
+
+      <ul>
+      <% @fornecedor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nomefantasia %><br>
+    <%= f.text_field :nomefantasia %>
+  </div>
+  <div class="field">
+    <%= f.label :razaosocial %><br>
+    <%= f.text_field :razaosocial %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br>
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro %>
+  </div>
+  <div class="field">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_id %><br>
+    <%= f.number_field :estado_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade_id %><br>
+    <%= f.number_field :cidade_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tcomercial %><br>
+    <%= f.text_field :tcomercial %>
+  </div>
+  <div class="field">
+    <%= f.label :tcelular %><br>
+    <%= f.text_field :tcelular %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpj %><br>
+    <%= f.text_field :cnpj %>
+  </div>
+  <div class="field">
+    <%= f.label :ie %><br>
+    <%= f.text_field :ie %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :im %><br>
+    <%= f.text_field :im %>
+  </div>
+  <div class="field">
+    <%= f.label :site %><br>
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :categoria_id %><br>
+    <%= f.number_field :categoria_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
