@@ -32,12 +32,16 @@
     <%= f.text_field :cep %>
   </div>
   <div class="field">
-    <%= f.label :estado_id %><br>
-    <%= f.number_field :estado_id %>
+    <%= f.label :estado %><br>
+    <%= f.collection_select :estado, Estado.all, :id, :nome, { prompt: true }%>
   </div>
   <div class="field">
-    <%= f.label :cidade_id %><br>
-    <%= f.number_field :cidade_id %>
+    <%= f.label :cidade %><br>
+    <% if @fornecedor.estado.nil? %>
+    <%= raw('<select id="fornecedor_cidade" name="fornecedor[cidade]"></select') %>
+    <% else %>
+    <%= f.collection_select :cidade, @fornecedor.estado.try(:cidade), :id, :nome %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :tcomercial %><br>
