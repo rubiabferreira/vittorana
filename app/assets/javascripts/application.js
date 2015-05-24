@@ -17,3 +17,15 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+function carregaCidades (containerEstado, containerCidade) {
+  containerEstado.change(function () {
+    var url = '/estados/' + $(this).val() + '/cidades.json';
+    $.getJSON(url, function (data) {
+      containerCidade.empty();
+      $.each(data, function (i, item) {
+        containerCidade.append('<option value="' + item.id + '">' + item.nome + '</option>');
+      });
+    });
+  });
+};
