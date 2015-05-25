@@ -16,24 +16,6 @@
       <th>Tcelular</th>
       <th>Cpf</th>
       <th>Rg</th>
-      <th>Evento</th>
-      <th>Horario festa</th>
-      <th>Duracao festa</th>
-      <th>Dia semana</th>
-      <th>Cortesia</th>
-      <th>Valor consumacao</th>
-      <th>Itens avulsos</th>
-      <th>Data evento</th>
-      <th>Qtde criancas</th>
-      <th>Qtde adultos</th>
-      <th>Tema</th>
-      <th>Gerar contrato</th>
-      <th>Valor</th>
-      <th>Num documento</th>
-      <th>Desconto</th>
-      <th>Entrada</th>
-      <th>Forma pagamento</th>
-      <th>Obs</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -52,27 +34,9 @@
         <td><%= cliente.tcelular %></td>
         <td><%= cliente.cpf %></td>
         <td><%= cliente.rg %></td>
-        <td><%= cliente.evento %></td>
-        <td><%= cliente.horario_festa %></td>
-        <td><%= cliente.duracao_festa %></td>
-        <td><%= cliente.dia_semana %></td>
-        <td><%= cliente.cortesia %></td>
-        <td><%= cliente.valor_consumacao %></td>
-        <td><%= cliente.itens_avulsos %></td>
-        <td><%= cliente.data_evento %></td>
-        <td><%= cliente.qtde_criancas %></td>
-        <td><%= cliente.qtde_adultos %></td>
-        <td><%= cliente.tema %></td>
-        <td><%= cliente.gerar_contrato %></td>
-        <td><%= cliente.valor %></td>
-        <td><%= cliente.num_documento %></td>
-        <td><%= cliente.desconto %></td>
-        <td><%= cliente.entrada %></td>
-        <td><%= cliente.forma_pagamento %></td>
-        <td><%= cliente.obs %></td>
-        <td><%= link_to 'Show', cliente %></td>
-        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', cliente %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
