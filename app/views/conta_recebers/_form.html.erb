@@ -1,0 +1,101 @@
+<%= form_for(@conta_receber) do |f| %>
+  <% if @conta_receber.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conta_receber.errors.count, "error") %> prohibited this conta_receber from being saved:</h2>
+
+      <ul>
+      <% @conta_receber.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form align="center" placeholder = "large-12.columns">
+<fieldset class = "row" >
+  <legend>Cadastro de Conta à Receber</legend>
+<br>
+<br>
+
+
+
+<div class="large-6 columns">
+    <%= f.label :cliente %><br>
+    <%= f.number_field :cliente %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :dependente %><br>
+    <%= f.number_field :dependente %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :tema %><br>
+    <%= f.text_field :tema %>
+  </div>
+<div class="large-6 columns">
+    <%= f.label :evento %><br>
+    <%= f.check_box :evento %>
+  </div>
+<div class="large-6 columns">
+    <%= f.label :dataEvento %><br>
+    <%= f.date_select :dataEvento %>
+  </div>
+ <div class="large-6 columns">
+    <%= f.label :qtdecriancas %><br>
+    <%= f.number_field :qtdecriancas %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :qtdeadultos %><br>
+    <%= f.number_field :qtdeadultos %>
+  </div>
+<div class="large-6 columns">
+    <%= f.label :horarioFesta %><br>
+    <%= f.time_select :horarioFesta %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :duracaoFesta %><br>
+    <%= f.time_select :duracaoFesta %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :itemavulso %><br>
+    <%= f.text_field :itemavulso %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :diaSemana %><br>
+    <%= f.number_field :diaSemana %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :cortesia %><br>
+    <%= f.check_box :cortesia %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :valorConsumacao %><br>
+    <%= f.text_field :valorConsumacao %>
+  </div>
+<div class="large-6 columns">
+    <%= f.label :valorfesta %><br>
+    <%= f.text_field :valorfesta %>
+  </div>
+<div class="large-6 columns">
+    <%= f.label :desconto %><br>
+    <%= f.text_field :desconto %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :entrada %><br>
+    <%= f.text_field :entrada %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :formapagamento %><br>
+    <%= f.number_field :formapagamento %>
+  </div>
+  <div class="large-6 columns">
+    <%= f.label :ndocumento %><br>
+    <%= f.text_field :ndocumento %>
+  </div>
+<div class="large-6 columns">
+    <%= f.label :obs %><br>
+    <%= f.text_field :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

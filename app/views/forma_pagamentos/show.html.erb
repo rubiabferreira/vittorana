@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @forma_pagamento.nome %>
+</p>
+
+<p>
+  <strong>Qtdeparcelas:</strong>
+  <%= @forma_pagamento.qtdeparcelas %>
+</p>
+
+<%= link_to 'Edit', edit_forma_pagamento_path(@forma_pagamento) %> |
+<%= link_to 'Back', forma_pagamentos_path %>

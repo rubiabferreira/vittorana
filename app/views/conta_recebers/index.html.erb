@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Conta Recebers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Dependente</th>
+      <th>Tema</th>
+      <th>Evento</th>
+      <th>Dataevento</th>
+      <th>Qtdecriancas</th>
+      <th>Qtdeadultos</th>
+      <th>Horariofesta</th>
+      <th>Duracaofesta</th>
+      <th>Itemavulso</th>
+      <th>Diasemana</th>
+      <th>Cortesia</th>
+      <th>Valorconsumacao</th>
+      <th>Valorfesta</th>
+      <th>Desconto</th>
+      <th>Entrada</th>
+      <th>Formapagamento</th>
+      <th>Ndocumento</th>
+      <th>Obs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conta_recebers.each do |conta_receber| %>
+      <tr>
+        <td><%= conta_receber.cliente %></td>
+        <td><%= conta_receber.dependente %></td>
+        <td><%= conta_receber.tema %></td>
+        <td><%= conta_receber.evento %></td>
+        <td><%= conta_receber.dataEvento %></td>
+        <td><%= conta_receber.qtdecriancas %></td>
+        <td><%= conta_receber.qtdeadultos %></td>
+        <td><%= conta_receber.horarioFesta %></td>
+        <td><%= conta_receber.duracaoFesta %></td>
+        <td><%= conta_receber.itemavulso %></td>
+        <td><%= conta_receber.diaSemana %></td>
+        <td><%= conta_receber.cortesia %></td>
+        <td><%= conta_receber.valorConsumacao %></td>
+        <td><%= conta_receber.valorfesta %></td>
+        <td><%= conta_receber.desconto %></td>
+        <td><%= conta_receber.entrada %></td>
+        <td><%= conta_receber.formapagamento %></td>
+        <td><%= conta_receber.ndocumento %></td>
+        <td><%= conta_receber.obs %></td>
+        <td><%= link_to 'Show', conta_receber %></td>
+        <td><%= link_to 'Edit', edit_conta_receber_path(conta_receber) %></td>
+        <td><%= link_to 'Destroy', conta_receber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Conta receber', new_conta_receber_path %>

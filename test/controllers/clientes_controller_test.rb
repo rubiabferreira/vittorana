@@ -18,7 +18,7 @@ class ClientesControllerTest < ActionController::TestCase
 
   test "should create cliente" do
     assert_difference('Cliente.count') do
-      post :create, cliente: { bairro: @cliente.bairro, cep: @cliente.cep, cidade_id: @cliente.cidade_id, conjuge: @cliente.conjuge, cortesia: @cliente.cortesia, cpf: @cliente.cpf, data_evento: @cliente.data_evento, desconto: @cliente.desconto, dia_semana: @cliente.dia_semana, duracao_festa: @cliente.duracao_festa, endereco: @cliente.endereco, entrada: @cliente.entrada, estado_id: @cliente.estado_id, evento: @cliente.evento, forma_pagamento: @cliente.forma_pagamento, gerar_contrato: @cliente.gerar_contrato, horario_festa: @cliente.horario_festa, itens_avulsos: @cliente.itens_avulsos, nome: @cliente.nome, num_documento: @cliente.num_documento, obs: @cliente.obs, qtde_adultos: @cliente.qtde_adultos, qtde_criancas: @cliente.qtde_criancas, rg: @cliente.rg, tcelular: @cliente.tcelular, tema: @cliente.tema, tresidencial: @cliente.tresidencial, valor: @cliente.valor, valor_consumacao: @cliente.valor_consumacao }
+      post :create, cliente: { bairro: @cliente.bairro, cep: @cliente.cep, cidade: @cliente.cidade, conjuge: @cliente.conjuge, cpf: @cliente.cpf, dependente: @cliente.dependente, email: @cliente.email, endereco: @cliente.endereco, estado: @cliente.estado, nome: @cliente.nome, rg: @cliente.rg, tcelular: @cliente.tcelular, tresidencial: @cliente.tresidencial }
     end
 
     assert_redirected_to cliente_path(assigns(:cliente))
@@ -35,7 +35,7 @@ class ClientesControllerTest < ActionController::TestCase
   end
 
   test "should update cliente" do
-    patch :update, id: @cliente, cliente: { bairro: @cliente.bairro, cep: @cliente.cep, cidade_id: @cliente.cidade_id, conjuge: @cliente.conjuge, cortesia: @cliente.cortesia, cpf: @cliente.cpf, data_evento: @cliente.data_evento, desconto: @cliente.desconto, dia_semana: @cliente.dia_semana, duracao_festa: @cliente.duracao_festa, endereco: @cliente.endereco, entrada: @cliente.entrada, estado_id: @cliente.estado_id, evento: @cliente.evento, forma_pagamento: @cliente.forma_pagamento, gerar_contrato: @cliente.gerar_contrato, horario_festa: @cliente.horario_festa, itens_avulsos: @cliente.itens_avulsos, nome: @cliente.nome, num_documento: @cliente.num_documento, obs: @cliente.obs, qtde_adultos: @cliente.qtde_adultos, qtde_criancas: @cliente.qtde_criancas, rg: @cliente.rg, tcelular: @cliente.tcelular, tema: @cliente.tema, tresidencial: @cliente.tresidencial, valor: @cliente.valor, valor_consumacao: @cliente.valor_consumacao }
+    patch :update, id: @cliente, cliente: { bairro: @cliente.bairro, cep: @cliente.cep, cidade: @cliente.cidade, conjuge: @cliente.conjuge, cpf: @cliente.cpf, dependente: @cliente.dependente, email: @cliente.email, endereco: @cliente.endereco, estado: @cliente.estado, nome: @cliente.nome, rg: @cliente.rg, tcelular: @cliente.tcelular, tresidencial: @cliente.tresidencial }
     assert_redirected_to cliente_path(assigns(:cliente))
   end
 

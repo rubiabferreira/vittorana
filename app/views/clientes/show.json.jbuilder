@@ -1,1 +1,1 @@
-json.extract! @cliente, :id, :nome, :conjuge, :endereco, :bairro, :cep, :estado_id, :cidade_id, :tresidencial, :tcelular, :cpf, :rg, :evento, :horario_festa, :duracao_festa, :dia_semana, :cortesia, :valor_consumacao, :itens_avulsos, :data_evento, :qtde_criancas, :qtde_adultos, :tema, :gerar_contrato, :valor, :num_documento, :desconto, :entrada, :forma_pagamento, :obs, :created_at, :updated_at
+json.extract! @cliente, :id, :nome, :conjuge, :endereco, :bairro, :cep, :estado, :cidade, :tresidencial, :tcelular, :cpf, :rg, :email, :dependente, :created_at, :updated_at

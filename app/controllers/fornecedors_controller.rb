@@ -4,8 +4,9 @@ class FornecedorsController < ApplicationController
   # GET /fornecedors
   # GET /fornecedors.json
   def index
-    @fornecedor = Fornecedor.all
+    @fornecedors = Fornecedor.all
   end
+
   # GET /fornecedors/1
   # GET /fornecedors/1.json
   def show

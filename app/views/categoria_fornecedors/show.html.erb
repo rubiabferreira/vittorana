@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @categoria_fornecedor.tipo %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @categoria_fornecedor.obs %>
+</p>
+
+<%= link_to 'Edit', edit_categoria_fornecedor_path(@categoria_fornecedor) %> |
+<%= link_to 'Back', categoria_fornecedors_path %>

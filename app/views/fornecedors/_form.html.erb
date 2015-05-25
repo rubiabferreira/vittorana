@@ -15,6 +15,7 @@
 
 </script>
 
+
 <%= form_for(@fornecedor) do |f| %>
   <% if @fornecedor.errors.any? %>
     <div id="error_explanation">
@@ -30,42 +31,42 @@
 
 <form align="center" placeholder = "large-12.columns">
 <fieldset class = "row" >
-  <legend> Cadastro de Fornecedores </legend>
+<legend> Fornecedor </legend>
 <br>
 <br>
+<div class="large-6 columns">
+<%= f.label :nomefantasia %><br>
+<%= f.text_field :nomefantasia %>
+</div>
 
-  <div class="large-6 columns">
-    <%= f.label :nomefantasia %><br>
-    <%= f.text_field :nomefantasia %>
-  </div>
-   <div class="large-6 columns">
-    <%= f.label :razaosocial %><br>
-    <%= f.text_field :razaosocial %>
-  </div>
-   <div class="large-4 columns">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="large-4 columns">
-    <%= f.label :bairro %><br>
-    <%= f.text_field :bairro %>
+<div class="large-6 columns">
+<%= f.label :razaosocial %><br>
+<%= f.text_field :razaosocial %>
+</div>
+<div class="large-4 columns">
+<%= f.label :endereco %><br>
+<%= f.text_field :endereco %>
+</div>
+<div class="large-4 columns">
+<%= f.label :bairro %><br>
+<%= f.text_field :bairro %>
   </div>
   <div class="large-4 columns">
     <%= f.label :cep %><br>
     <%= f.text_field :cep %>
   </div>
-  <div class="large-6 columns">
-    <%= f.label :estado %><br>
-    <%= f.collection_select :estado, Estado.all, :id, :nome, {:prompt => true} %>
-  </div>
- <div class="large-6 columns">
-    <%= f.label :cidade %><br>
-    <%= @fornecedor.estado.nil? ? (raw '<select id="cliente_cidade"
-nome="cliente[cidade]" type="text"/></select>') :
+<div class="large-4 columns">
+<%= f.label :estado %><br />
+<%= f.collection_select :estado, Estado.all, :id, :nome, {:prompt => true} %>
+</div>
+
+<div class="large-4 columns">
+<%= f.label :cidade %><br />
+<%= @fornecedor.estado.nil? ? (raw '<select id="fornecedor_cidade"
+nome="fornecedor[cidade]" type="text"/></select>') :
 (f.collection_select :cidade, @fornecedor.estado.try(:cidade), :id,
 :nome) %>
 </div>
-  </div>
   <div class="large-4 columns">
     <%= f.label :tcomercial %><br>
     <%= f.text_field :tcomercial %>
@@ -94,19 +95,19 @@ nome="cliente[cidade]" type="text"/></select>') :
     <%= f.label :site %><br>
     <%= f.text_field :site %>
   </div>
-  <div class="large-4 columns">
+  <div class="large-12 columns">
     <%= f.label :categoria %><br>
-    <%= f.collection_select :categoria, Categorium.all, :id, :tipo, {:prompt => true} %>
-  </div>
-  <br />
-  <br />
-  <br />
+    <%= f.collection_select :categoria, CategoriaFornecedor.all, :id, :tipo, {:prompt => true} %>
+    <%= link_to 'Adicionar Categoria', new_categoria_fornecedor_path %>
+<br />
+</div>
 
-  <div class = "large-6 columns">
-    <%= f.submit %>
+
+  <div class="large-12 columns">
+ <br />
+ <br />
+  <%= f.submit %>
   </div>
   </form>
   </fieldset>
-
-
 <% end %>

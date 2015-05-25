@@ -1,4 +1,5 @@
 class Fornecedor < ActiveRecord::Base
+ belongs_to :estado
+    belongs_to :cidade
 
-has_many :categoria
 end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dependente Clientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Datanascimento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dependente_clientes.each do |dependente_cliente| %>
+      <tr>
+        <td><%= dependente_cliente.nome %></td>
+        <td><%= dependente_cliente.datanascimento %></td>
+        <td><%= link_to 'Show', dependente_cliente %></td>
+        <td><%= link_to 'Edit', edit_dependente_cliente_path(dependente_cliente) %></td>
+        <td><%= link_to 'Destroy', dependente_cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dependente cliente', new_dependente_cliente_path %>

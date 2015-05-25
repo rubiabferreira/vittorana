@@ -6,30 +6,14 @@ one:
   endereco: MyString
   bairro: MyString
   cep: MyString
-  estado_id: 1
-  cidade_id: 1
+  estado: MyString
+  cidade: MyString
   tresidencial: MyString
   tcelular: MyString
   cpf: MyString
   rg: MyString
-  evento: false
-  horario_festa: 2015-04-08 01:42:18
-  duracao_festa: MyString
-  dia_semana: 1
-  cortesia: false
-  valor_consumacao: 1.5
-  itens_avulsos: 1
-  data_evento: 2015-04-08
-  qtde_criancas: 1
-  qtde_adultos: 1
-  tema: 1
-  gerar_contrato: false
-  valor: 1.5
-  num_documento: MyString
-  desconto: 1.5
-  entrada: 1.5
-  forma_pagamento: MyString
-  obs: MyText
+  email: MyString
+  dependente: 1
 
 two:
   nome: MyString
@@ -37,27 +21,11 @@ two:
   endereco: MyString
   bairro: MyString
   cep: MyString
-  estado_id: 1
-  cidade_id: 1
+  estado: MyString
+  cidade: MyString
   tresidencial: MyString
   tcelular: MyString
   cpf: MyString
   rg: MyString
-  evento: false
-  horario_festa: 2015-04-08 01:42:18
-  duracao_festa: MyString
-  dia_semana: 1
-  cortesia: false
-  valor_consumacao: 1.5
-  itens_avulsos: 1
-  data_evento: 2015-04-08
-  qtde_criancas: 1
-  qtde_adultos: 1
-  tema: 1
-  gerar_contrato: false
-  valor: 1.5
-  num_documento: MyString
-  desconto: 1.5
-  entrada: 1.5
-  forma_pagamento: MyString
-  obs: MyText
+  email: MyString
+  dependente: 1

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @conta_pagar.fornecedor %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @conta_pagar.valor %>
+</p>
+
+<%= link_to 'Edit', edit_conta_pagar_path(@conta_pagar) %> |
+<%= link_to 'Back', conta_pagars_path %>

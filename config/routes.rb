@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :categoria
-  resources :fornecedors
   resources :clientes
+  resources :categoria_fornecedors
+  resources :conta_pagars
+  resources :forma_pagamentos
+  resources :temas
+  resources :dependente_clientes
+  resources :conta_recebers
+  resources :fornecedors
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

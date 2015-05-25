@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @dependente_cliente.nome %>
+</p>
+
+<p>
+  <strong>Datanascimento:</strong>
+  <%= @dependente_cliente.datanascimento %>
+</p>
+
+<%= link_to 'Edit', edit_dependente_cliente_path(@dependente_cliente) %> |
+<%= link_to 'Back', dependente_clientes_path %>

@@ -1,21 +1,3 @@
-<script type="text/javascript">
-
-  $(document).ready(function() {
-
-    $('#cliente_estado').change(function(){
-      $.getJSON("/estados/" + $(this).val() + '/cidades.json', function(data) {
-        $('#cliente_cidade').empty();
-        $.each(data, function(i,item){
-        $('#cliente_cidade').append('<option value="' + item.cidade.id + '">' + item.cidade.nome + '</option>');
-        });
-      });
-    });
-
-  });
-
-</script>
-
-
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
@@ -28,40 +10,32 @@
       </ul>
     </div>
   <% end %>
+
 <form align="center" placeholder = "large-12.columns">
 <fieldset class = "row" >
-  <legend> Cadastro de Clientes </legend>
+  <legend>Cliente</legend>
 <br>
 <br>
-
-
 
 <div class="large-6 columns">
 <%= f.label :nome %><br>
-<%= f.text_field :nome  %>
+<%= f.text_field :nome %>
 </div>
 
-
- <div class="large-6 columns">
- <%= f.label :conjuge %><br>
- <%= f.text_field :conjuge %>
+<div class="large-6 columns">
+<%= f.label :conjuge %><br>
+<%= f.text_field :conjuge%>
 </div>
 
- <div class="large-6 columns">
- <%= f.label :endereco %><br>
- <%= f.text_field :endereco %>
+<div class="large-4 columns">
+<%= f.label :endereco %><br>
+<%= f.text_field :endereco %>
+</div>
 
- </div>
-
-  <div class="large-6 columns">
- <%= f.label :email %><br>
- <%= f.text_field :email %>
- </div>
-
-  <div class="large-6 columns">
-  <%= f.label :bairro %><br>
-  <%= f.text_field :bairro %>
-  </div>
+<div class="large-4 columns">
+<%= f.label :bairro %><br>
+<%= f.text_field :bairro%>
+</div>
 
 
 <div class="large-4 columns">
@@ -75,30 +49,27 @@
 <%= f.collection_select :estado, Estado.all, :id, :nome, {:prompt => true} %>
 </div>
 
+
 <div class="large-4 columns">
-<%= f.label :cidade %><br />
+<%= f.label :cidade %><br>
 <%= @cliente.estado.nil? ? (raw '<select id="cliente_cidade"
 nome="cliente[cidade]" type="text"/></select>') :
 (f.collection_select :cidade, @cliente.estado.try(:cidade), :id,
 :nome) %>
 </div>
 
-
 <div class="large-4 columns">
-<label>Telefone Residencial</label><br />
+<%= f.label :tresidencial %><br>
 <%= f.text_field :tresidencial %>
 </div>
 
-
 <div class="large-4 columns">
-<label>Telefone Celular</label><br />
+<%= f.label :tcelular %><br>
 <%= f.text_field :tcelular %>
 </div>
 
-
-
 <div class="large-4 columns">
-<%= f.label :cpf %><br />
+<%= f.label :cpf %><br>
 <%= f.text_field :cpf %>
 </div>
 
@@ -106,118 +77,25 @@ nome="cliente[cidade]" type="text"/></select>') :
 <%= f.label :rg %><br>
 <%= f.text_field :rg %>
 </div>
+
+<div class="large-12 columns">
+<%= f.label :email %><br>
+<%= f.text_field :email %>
+</div>
+<br />
+
+<div class="large-12 columns">
+<%= f.label :dependente %><br>
+<%= f.collection_select :dependente, DependenteCliente.all, :id, :nome, {:prompt => true} %>
+<%= link_to 'Adicionar Dependente (Filhos)', new_dependente_cliente_path %>
+<br />
+</div>
+
+<div class="large-12 columns">
 <br />
 <br />
-
-
-<div class ="row">
-<fieldset class="large-6 columns">
-<legend> Evento </legend>
-<div div class="large-12 columns" >
-<%= f.label :evento %><br>
-<%= f.check_box :evento %>
-</div>
-
-
-<div class="large-2 columns">
-<%= f.label :horario_festa %>
-<%= f.time_select :horario_festa %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :duracao_festa %><br>
-<%= f.text_field :duracao_festa %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :dia_semana %><br>
-<%= f.number_field :dia_semana %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :cortesia %><br>
-<%= f.check_box :cortesia %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :valor_consumacao %><br>
-<%= f.text_field :valor_consumacao %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :itens_avulsos %><br>
-<%= f.number_field :itens_avulsos %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :data_evento %><br>
-<%= f.text_field :data_evento %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :qtde_criancas %><br>
-<%= f.number_field :qtde_criancas %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :qtde_adultos %><br>
-<%= f.number_field :qtde_adultos %>
-</div>
-
-<div class="large-4 columns">
-<%= f.label :tema %><br>
-<%= f.number_field :tema %>
-</div>
-</fieldset>
-</div>
-
-
-<fieldset class="large-4 columns">
-<fieldset>
-<legend>Financeiro</legend>
-<div >
-<%= f.label :gerar_contrato %><br>
-<%= f.check_box :gerar_contrato %>
-</div>
-
-<div >
-<%= f.label :valor %><br>
-<%= f.text_field :valor %>
-</div>
-
-<div >
-<%= f.label :num_documento %><br>
-<%= f.text_field :num_documento %>
-</div>
-
-<div >
-<%= f.label :desconto %><br>
-<%= f.text_field :desconto %>
-</div>
-
-<div >
-<%= f.label :entrada %><br>
-<%= f.text_field :entrada %>
-</div>
-
-<div >
-<%= f.label :forma_pagamento %><br>
-<%= f.text_field :forma_pagamento %>
-</div>
-
-<div >
-<%= f.label :obs %><br>
-<%= f.text_area :obs %>
-</div>
 <%= f.submit %>
-</fieldset>
-</div>
-
-<div class = "large-4 columns">
-
-</div>
-
-
-</form>
-</fieldset>
+  </div>
+  </form>
+  </fieldset>
 <% end %>
