@@ -1,59 +1,69 @@
 <p id="notice"><%= notice %></p>
+<h2 class="text-center">Cliente</h2>
+<fieldset>
+  <legend>Identificação</legend>
+  <p>
+    <strong>Nome do cliente:</strong>
+    <%= @cliente.nome %>
+  </p>
+  <p>
+    <strong>Nome do conjuge:</strong>
+    <%= @cliente.conjuge %>
+  </p>
+</fieldset>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @cliente.nome %>
-</p>
+<fieldset>
+  <legend>Endereço</legend>
+  <p>
+    <strong>Logradouro</strong>
+    <%= @cliente.endereco %>
+  </p>
 
-<p>
-  <strong>Conjuge:</strong>
-  <%= @cliente.conjuge %>
-</p>
+  <p>
+    <strong>Bairro:</strong>
+    <%= @cliente.bairro %>
+  </p>
 
-<p>
-  <strong>Endereco:</strong>
-  <%= @cliente.endereco %>
-</p>
+  <p>
+    <strong>Cep:</strong>
+    <%= @cliente.cep %>
+  </p>
 
-<p>
-  <strong>Bairro:</strong>
-  <%= @cliente.bairro %>
-</p>
+  <p>
+    <strong>Estado:</strong>
+    <%= @cliente.estado.nome %>
+  </p>
 
-<p>
-  <strong>Cep:</strong>
-  <%= @cliente.cep %>
-</p>
+  <p>
+    <strong>Cidade:</strong>
+    <%= @cliente.cidade.nome %>
+  </p>
+</fieldset>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @cliente.estado_id %>
-</p>
+<fieldset>
+  <legend>Contato</legend>
+  <p>
+    <strong>Telefone residencial:</strong>
+    <%= @cliente.tresidencial %>
+  </p>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @cliente.cidade_id %>
-</p>
+  <p>
+    <strong>Telefone celular:</strong>
+    <%= @cliente.tcelular %>
+  </p>
+</fieldset>
 
-<p>
-  <strong>Tresidencial:</strong>
-  <%= @cliente.tresidencial %>
-</p>
+<fieldset>
+  <legend>Documentos</legend>
+    <p>
+      <strong>Cpf:</strong>
+      <%= @cliente.cpf %>
+    </p>
 
-<p>
-  <strong>Tcelular:</strong>
-  <%= @cliente.tcelular %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @cliente.cpf %>
-</p>
-
-<p>
-  <strong>Rg:</strong>
-  <%= @cliente.rg %>
-</p>
-
+    <p>
+      <strong>Rg:</strong>
+      <%= @cliente.rg %>
+    </p>
+</fieldset>
 <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
 <%= link_to 'Voltar', clientes_path %>
