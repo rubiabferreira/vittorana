@@ -11,55 +11,79 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :conjuge %><br>
-    <%= f.text_field :conjuge %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :bairro %><br>
-    <%= f.text_field :bairro %>
-  </div>
-  <div class="field">
-    <%= f.label :cep %><br>
-    <%= f.text_field :cep %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.collection_select :estado, Estado.all, :id, :nome, { prompt: true }%>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <% if @cliente.estado.nil? %>
-    <%= raw('<select id="cliente_cidade" name="cliente[cidade]"></select') %>
-    <% else %>
-    <%= f.collection_select :cidade, @cliente.estado.try(:cidade), :id, :nome %>
-    <% end %>
-  </div>
-  <div class="field">
-    <%= f.label :tresidencial %><br>
-    <%= f.text_field :tresidencial %>
-  </div>
-  <div class="field">
-    <%= f.label :tcelular %><br>
-    <%= f.text_field :tcelular %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.text_field :cpf %>
-  </div>
-  <div class="field">
-    <%= f.label :rg %><br>
-    <%= f.text_field :rg %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :nome, 'Nome' %>
+      <%= f.text_field :nome %>
+    </div>
+
+    <div class="small-12 columns">
+      <%= f.label :conjuge, 'Conjuge' %>
+      <%= f.text_field :conjuge %>
+    </div>
+
+    <fieldset>
+      <legend>Endereço</legend>
+      <div class="small-12 columns">
+        <%= f.label :endereco, 'Logradouro' %>
+        <%= f.text_field :endereco %>
+      </div>
+
+      <div class="small-12 columns">
+        <%= f.label :bairro, 'Bairro' %>
+        <%= f.text_field :bairro %>
+      </div>
+
+      <div class="small-12 columns">
+        <%= f.label :cep, 'CEP' %>
+        <%= f.text_field :cep %>
+      </div>
+
+      <div class="small-4 columns">
+        <%= f.label :estado, 'Estado' %>
+        <%= f.collection_select(:estado, Estado.all, :id, :nome, { prompt: 'UF' }) %>
+      </div>
+
+      <div class="small-8 columns">
+        <%= f.label :cidade, 'Cidade' %>
+
+        <% if @cliente.estado.nil? %>
+        <%= raw('<select id="cliente_cidade" name="cliente[cidade]"></select>') %>
+        <% else %>
+        <%= f.collection_select :cidade, @cliente.estado.try(:cidade), :id, :nome %>
+        <% end %>
+
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Contato</legend>
+      <div class="small-12 columns">
+        <%= f.label :tresidencial, 'Telefone residêncial' %>
+        <%= f.text_field :tresidencial %>
+      </div>
+
+      <div class="small-12 columns">
+        <%= f.label :tcelular, 'Telefone celular' %>
+        <%= f.text_field :tcelular %>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Documentos</legend>
+
+        <div class="small-12 columns">
+          <%= f.label :cpf, 'CPF' %>
+          <%= f.text_field :cpf %>
+        </div>
+
+        <div class="small-12 columns">
+          <%= f.label :rg, 'RG' %>
+          <%= f.text_field :rg %>
+        </div>
+
+    </fieldset>
+    <div class="actions">
+      <%= f.submit 'Salvar', class: 'button' %>
+    </div>
   </div>
 <% end %>
