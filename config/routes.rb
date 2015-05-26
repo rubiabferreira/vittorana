@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contas_a_receber
   resources :contas_a_pagar
   resources :temas
   resources :fornecedores, path_names: { new: "novo", edit: "editar" }

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @conta_a_receber.cliente_id %>
+</p>
+
+<p>
+  <strong>Vencimento:</strong>
+  <%= @conta_a_receber.vencimento %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @conta_a_receber.valor %>
+</p>
+
+<%= link_to 'Edit', edit_conta_a_receber_path(@conta_a_receber) %> |
+<%= link_to 'Back', contas_a_receber_path %>
