@@ -3,7 +3,7 @@ class CreateContasAReceber < ActiveRecord::Migration
     create_table :contas_a_receber do |t|
       t.integer :cliente_id
       t.date :vencimento
-      t.double :valor
+      t.decimal :valor, precision: 5, scale: 2
 
       t.timestamps null: false
     end

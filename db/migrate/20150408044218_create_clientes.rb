@@ -1,17 +1,17 @@
 class CreateClientes < ActiveRecord::Migration
   def change
     create_table :clientes do |t|
-      t.string :nome
-      t.string :conjuge
-      t.string :endereco
-      t.string :bairro
-      t.string :cep
+      t.string :nome, limit: 80
+      t.string :conjuge, limit: 80
+      t.string :endereco, limit: 120
+      t.string :bairro, limit: 30
+      t.string :cep, limit: 10
       t.integer :estado_id
       t.integer :cidade_id
-      t.string :tresidencial
-      t.string :tcelular
-      t.string :cpf
-      t.string :rg
+      t.string :tresidencial, limit: 25
+      t.string :tcelular, limit: 25
+      t.string :cpf, limit: 14
+      t.string :rg, limit: 14
       t.boolean :evento
       t.time :horario_festa
       t.string :duracao_festa
