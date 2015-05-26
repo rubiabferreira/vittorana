@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @evento.inicio %>
+</p>
+
+<p>
+  <strong>Fim:</strong>
+  <%= @evento.fim %>
+</p>
+
+<p>
+  <strong>Cortesia:</strong>
+  <%= @evento.cortesia %>
+</p>
+
+<p>
+  <strong>Consumacao:</strong>
+  <%= @evento.consumacao %>
+</p>
+
+<p>
+  <strong>Itens avulsos:</strong>
+  <%= @evento.itens_avulsos %>
+</p>
+
+<p>
+  <strong>Num criancas:</strong>
+  <%= @evento.num_criancas %>
+</p>
+
+<p>
+  <strong>Num adultos:</strong>
+  <%= @evento.num_adultos %>
+</p>
+
+<p>
+  <strong>Tema:</strong>
+  <%= @evento.tema_id %>
+</p>
+
+<p>
+  <strong>Contrato:</strong>
+  <%= @evento.contrato %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @evento.documento %>
+</p>
+
+<p>
+  <strong>Entrada:</strong>
+  <%= @evento.entrada %>
+</p>
+
+<p>
+  <strong>Desconto:</strong>
+  <%= @evento.desconto %>
+</p>
+
+<p>
+  <strong>Forma pagamento:</strong>
+  <%= @evento.forma_pagamento %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @evento.obs %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @evento.cliente_id %>
+</p>
+
+<%= link_to 'Edit', edit_evento_path(@evento) %> |
+<%= link_to 'Back', eventos_path %>

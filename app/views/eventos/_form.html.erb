@@ -1,0 +1,77 @@
+<%= form_for(@evento) do |f| %>
+  <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :inicio %><br>
+    <%= f.datetime_select :inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fim %><br>
+    <%= f.datetime_select :fim %>
+  </div>
+  <div class="field">
+    <%= f.label :cortesia %><br>
+    <%= f.check_box :cortesia %>
+  </div>
+  <div class="field">
+    <%= f.label :consumacao %><br>
+    <%= f.text_field :consumacao %>
+  </div>
+  <div class="field">
+    <%= f.label :itens_avulsos %><br>
+    <%= f.number_field :itens_avulsos %>
+  </div>
+  <div class="field">
+    <%= f.label :num_criancas %><br>
+    <%= f.number_field :num_criancas %>
+  </div>
+  <div class="field">
+    <%= f.label :num_adultos %><br>
+    <%= f.number_field :num_adultos %>
+  </div>
+  <div class="field">
+    <%= f.label :tema_id %><br>
+    <%= f.number_field :tema_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato %><br>
+    <%= f.check_box :contrato %>
+  </div>
+  <div class="field">
+    <%= f.label :documento %><br>
+    <%= f.text_field :documento %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada %><br>
+    <%= f.text_field :entrada %>
+  </div>
+  <div class="field">
+    <%= f.label :desconto %><br>
+    <%= f.text_field :desconto %>
+  </div>
+  <div class="field">
+    <%= f.label :forma_pagamento %><br>
+    <%= f.text_field :forma_pagamento %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_area :obs %>
+  </div>
+  <div class="field">
+    <%= f.label :cliente_id %><br>
+    <%= f.number_field :cliente_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

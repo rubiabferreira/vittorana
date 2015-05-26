@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :eventos
   resources :contas_a_receber
   resources :contas_a_pagar
   resources :temas
