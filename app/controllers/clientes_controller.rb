@@ -19,6 +19,7 @@ class ClientesController < ApplicationController
 
   # GET /clientes/1/edit
   def edit
+    @cidades = @cliente.try(:estado).try(:cidades)
   end
 
   # POST /clientes

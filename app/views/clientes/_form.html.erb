@@ -43,8 +43,8 @@
       </div>
 
       <div class="small-4 medium-2 columns">
-        <%= f.label :estado, 'Estado' %>
-        <%= f.collection_select(:estado, Estado.all, :id, :nome, { prompt: 'UF' }) %>
+        <%= f.label :estado_id, 'Estado' %>
+        <%= f.collection_select(:estado_id, Estado.all, :id, :nome, { prompt: 'UF' }) %>
       </div>
 
       <div class="small-8 medium-5 end columns">
@@ -53,7 +53,8 @@
         <% if @cliente.estado.nil? %>
         <%= raw('<select id="cliente_cidade" name="cliente[cidade]"></select>') %>
         <% else %>
-        <%= f.collection_select :cidade, @cliente.estado.try(:cidade), :id, :nome %>
+        <%= f.collection_select :cidade_id, @cidades, :id, :nome,
+                { prompt: @cliente.try(:cidade).try(:nome) } %>
         <% end %>
 
       </div>
