@@ -13,46 +13,48 @@
   </head>
 
   <body>
-    <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">Vitorana</a></h1>
-        </li>
-         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="left">
-          <li class="has-dropdown">
-            <a href="#">Clientes</a>
-            <ul class="dropdown">
-              <li><%= link_to 'Criar novo', new_cliente_path %></li>
-              <li><%= link_to 'Lista todos', clientes_path %></a></li>
-            </ul>
+    <aside>
+      <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">Vitorana</a></h1>
           </li>
-
-          <li class="has-dropdown">
-            <a href="#">Fornecedores</a>
-            <ul class="dropdown">
-              <li><%= link_to 'Criar novo', new_fornecedor_path %></li>
-              <li><%= link_to 'Lista todos', fornecedores_path %></a></li>
-            </ul>
-          </li>
-
-          <li class="has-dropdown">
-            <a href="#">Categorias</a>
-            <ul class="dropdown">
-              <li><%= link_to 'Criar nova', new_categoria_path %></li>
-              <li><%= link_to 'Lista todos', categorias_path %></a></li>
-            </ul>
-          </li>
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
-      </section>
-    </nav>
 
-    <%= yield %>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="left">
+            <li class="has-dropdown">
+              <a href="#">Clientes</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar novo', new_cliente_path %></li>
+                <li><%= link_to 'Lista todos', clientes_path %></a></li>
+              </ul>
+            </li>
 
+            <li class="has-dropdown">
+              <a href="#">Fornecedores</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar novo', new_fornecedor_path %></li>
+                <li><%= link_to 'Lista todos', fornecedores_path %></a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">Categorias</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar nova', new_categoria_path %></li>
+                <li><%= link_to 'Lista todos', categorias_path %></a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </aside>
+    <main>
+      <%= yield %>
+    <main>
   </body>
 </html>

@@ -15,3 +15,8 @@
  *= require foundation_and_overrides
 
  */
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
