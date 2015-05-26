@@ -58,4 +58,5 @@ ActiveSupport::Inflector.inflections do |inflect|
 
   # Irregulares
   inflect.irregular "país", "países"
+  inflect.irregular "conta_a_pagar", "contas_a_pagar"
 end
