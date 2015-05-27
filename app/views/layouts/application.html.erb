@@ -26,6 +26,7 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="left">
+
             <li class="has-dropdown">
               <a href="#">Clientes</a>
               <ul class="dropdown">
@@ -47,6 +48,38 @@
               <ul class="dropdown">
                 <li><%= link_to 'Criar nova', new_categoria_path %></li>
                 <li><%= link_to 'Lista todos', categorias_path %></a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">Temas</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar novo', new_tema_path %></li>
+                <li><%= link_to 'Lista todos', temas_path %></a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">Contas a pagar</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar nova', new_conta_a_pagar_path %></li>
+                <li><%= link_to 'Lista todas', contas_a_pagar_path %></a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">Contas a receber</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar nova', new_conta_a_receber_path %></li>
+                <li><%= link_to 'Lista todas', contas_a_receber_path %></a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">Eventos</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar novo', new_evento_path %></li>
+                <li><%= link_to 'Lista todos', eventos_path %></a></li>
               </ul>
             </li>
           </ul>

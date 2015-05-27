@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :eventos
-  resources :contas_a_receber
-  resources :contas_a_pagar
-  resources :temas
-  resources :fornecedores, path_names: { new: "novo", edit: "editar" }
-  resources :categorias, path_names: { new: "novo", edit: "editar" }
-  resources :clientes, path_names: { new: "novo", edit: "editar" }
+  resources :eventos, path_names: { new: 'novo', edit: 'editar'}
+  resources :contas_a_receber, path_names: { new: 'nova', edit: 'editar'}
+  resources :contas_a_pagar, path_names: { new: 'nova', edit: 'editar'}
+  resources :temas, path_names: { new: 'novo', edit: 'editar'}
+  resources :fornecedores, path_names: { new: 'novo', edit: 'editar'}
+  resources :categorias, path_names: { new: 'nova', edit: 'editar'}
+  resources :clientes, path_names: { new: 'novo', edit: 'editar'}
 
   get 'estados/:id/cidades' => 'estados#cidades', as: :cidades_do_estado
   # The priority is based upon order of creation: first created -> highest priority.
