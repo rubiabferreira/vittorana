@@ -16,6 +16,7 @@
 //= require jquery.inputmask.extensions
 //= require jquery.inputmask.numeric.extensions
 //= require jquery.inputmask.date.extensions
+//= require datetimepicker
 //= require foundation
 //= require turbolinks
 //= require_tree .

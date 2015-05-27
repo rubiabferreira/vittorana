@@ -9,6 +9,11 @@ gem 'foundation-rails'
 # Biblioteca usada para mascaras de dados
 gem 'jquery-inputmask-rails'
 
+# Installa assets via bower
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
