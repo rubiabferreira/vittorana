@@ -23,6 +23,21 @@
 
 $(function(){ $(document).foundation(); });
 
+var datetimepickerPtBr = {
+  lang:'ptBR',
+  i18n:{
+    ptBR:{
+      months:['Janeiro','Fevereiro','Março','Abril',
+         'Maio','Junho','Julio','Agosto', 'Setembro',
+         'Outubro','Novembro','Dezembro', ],
+      dayOfWeek:["Dom", "Seg", "Ter", "Qua",
+          "Qui", "Sex", "Sab", ]
+    }
+  },
+  timepicker:true,
+  format:'d-m-Y H:i'
+};
+
 function carregaCidades (containerEstado, containerCidade) {
   containerEstado.change(function () {
     var url = '/estados/' + $(this).val() + '/cidades.json';
