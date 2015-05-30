@@ -9,7 +9,7 @@ var carregaValidacoes = function () {
   $('#cliente_cep').inputmask("99.999-999");
   $('#cliente_tresidencial').inputmask("(99) 9999-9999");
   $('#cliente_cpf').inputmask("999.999.999-99");
-  $('#cliente_tcelular').inputmask("999.999.999-99");
+  $('#cliente_tcelular').inputmask("(99) 9999-9999");
 };
 
 
