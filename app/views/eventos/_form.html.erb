@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div>
+    <%= f.label :cliente_id, 'Cliente' %>
+    <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente' }) %>
+  </div>
   <div class="field">
     <%= f.label :inicio %><br>
     <%= f.text_field :inicio %>
