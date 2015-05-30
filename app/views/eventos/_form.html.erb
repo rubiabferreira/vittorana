@@ -10,10 +10,13 @@
       </ul>
     </div>
   <% end %>
+  <fieldset>
+  <legend>Cliente</legend>
   <div>
-    <%= f.label :cliente_id, 'Cliente' %>
+    <%= f.label :cliente_id, 'Nome' %>
     <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente' }) %>
   </div>
+  </fieldset>
   <div class="field">
     <%= f.label :inicio %><br>
     <%= f.text_field :inicio %>
@@ -42,9 +45,9 @@
     <%= f.label :num_adultos %><br>
     <%= f.number_field :num_adultos %>
   </div>
-  <div class="field">
-    <%= f.label :tema_id %><br>
-    <%= f.number_field :tema_id %>
+ <div>
+    <%= f.label :tema_id, 'Tema' %>
+    <%= f.collection_select(:tema_id, Tema.all, :id, :nome, { prompt: 'Escolha o tema' }) %>
   </div>
   <div class="field">
     <%= f.label :contrato %><br>
