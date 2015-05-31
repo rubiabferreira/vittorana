@@ -6,8 +6,8 @@ brad_e_angelina:
   endereco: EUA
   bairro: Bairro dos atores
   cep: 12.345-678
-  estado_id: 1
-  cidade_id: 1
+  estado: pr
+  cidade: abatia
   tresidencial: (12) 3456-7890
   tcelular: (12) 3456-7890
   cpf: 123.456.789-10
@@ -19,8 +19,8 @@ luciano_huck_e_angelica:
   endereco: Rua dos globais
   bairro: Bairro dos artistas
   cep: 12.345-678
-  estado_id: 1
-  cidade_id: 1
+  estado: sp
+  cidade: adamantina
   tresidencial: (12) 3456-7890
   tcelular: (12) 3456-7890
   cpf: 123.456.789-10

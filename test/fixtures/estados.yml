@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  sigla: MyString
-  nome: MyString
-  capital: MyString
+pr:
+  sigla: PR
+  nome: Paraná
+  capital: Curitiba
 
-two:
-  sigla: MyString
-  nome: MyString
-  capital: MyString
+sp:
+  sigla: SP
+  nome: São Paulo
+  capital: São Paulo

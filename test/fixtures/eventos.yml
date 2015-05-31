@@ -1,23 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+festa_do_joaquim:
+  cliente: luciano_huck_e_angelica
   inicio: 2015-05-26 20:50:05
   fim: 2015-05-26 20:50:05
   cortesia: false
   consumacao: 9.99
-  itens_avulsos: 1
-  num_criancas: 1
-  num_adultos: 1
-  tema_id: 1
-  contrato: false
-  documento: MyString
-  entrada: 9.99
-  desconto: 9.99
-  forma_pagamento: MyString
-  obs: MyText
+  itens_avulsos: 111
+  num_criancas: 123
+  num_adultos: 124
+  tema: ben10
+  contrato: true
+  documento: abc123
+  entrada: 9999.99
+  desconto: 99.99
+  forma_pagamento: 30 dias
+  obs: Sem observações
   cliente_id: 1
 
-two:
+festa_da_zahara:
+  cliente: brad_e_angelina
   inicio: 2015-05-26 20:50:05
   fim: 2015-05-26 20:50:05
   cortesia: false
@@ -25,11 +27,10 @@ two:
   itens_avulsos: 1
   num_criancas: 1
   num_adultos: 1
-  tema_id: 1
+  tema: branca_de_neve
   contrato: false
-  documento: MyString
+  documento: 87654
   entrada: 9.99
   desconto: 9.99
-  forma_pagamento: MyString
-  obs: MyText
-  cliente_id: 1
+  forma_pagamento: À vista
+  obs: A festa vai ser lá nos Estados Unidos

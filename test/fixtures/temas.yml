@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nome: MyString
-  obs: MyText
+ben10:
+  nome: Ben 10
+  obs: Para meninos
 
-two:
-  nome: MyString
-  obs: MyText
+branca_de_neve:
+  nome: Branca de neve
+  obs: Para meninas
+
+monstros_sa:
+  nome: Monstros S.A
+  obs: O preferido dos adultos
