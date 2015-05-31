@@ -20,7 +20,7 @@
         <td><%= cliente.tcelular %></td>
         <td><%= link_to 'Exibir', cliente %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Tem certeza? Esta ação irá excluir todos os eventos deste cliente.' } %></td>
       </tr>
     <% end %>
   </tbody>
