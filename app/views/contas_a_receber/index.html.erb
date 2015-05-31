@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Contas A Receber</h1>
+<h1 class="text-center">Contas a receber</h1>
 
 <table>
   <thead>
@@ -18,9 +18,9 @@
         <td><%= conta_a_receber.cliente_id %></td>
         <td><%= conta_a_receber.vencimento %></td>
         <td><%= conta_a_receber.valor %></td>
-        <td><%= link_to 'Show', conta_a_receber %></td>
-        <td><%= link_to 'Edit', edit_conta_a_receber_path(conta_a_receber) %></td>
-        <td><%= link_to 'Destroy', conta_a_receber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', conta_a_receber %></td>
+        <td><%= link_to 'Editar', edit_conta_a_receber_path(conta_a_receber) %></td>
+        <td><%= link_to 'Excluir', conta_a_receber, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

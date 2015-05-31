@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Temas</h1>
+<h1 class="text-center">Temas</h1>
 
 <table>
   <thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= tema.nome %></td>
         <td><%= tema.obs %></td>
-        <td><%= link_to 'Show', tema %></td>
-        <td><%= link_to 'Edit', edit_tema_path(tema) %></td>
-        <td><%= link_to 'Destroy', tema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', tema %></td>
+        <td><%= link_to 'Editar', edit_tema_path(tema) %></td>
+        <td><%= link_to 'Excluir', tema, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
