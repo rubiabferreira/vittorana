@@ -49,3 +49,23 @@ function carregaCidades (containerEstado, containerCidade) {
     });
   });
 };
+
+var selectedTab  = function() {
+  var path = $(location).attr('pathname');
+  var menu = ['eventos', 'clientes', 'fornecedores', 'categorias',
+      'temas', 'contas_a_pagar', 'contas_a_receber'];
+
+  for (var i = 0; i < menu.length; i++) {
+    var tab = '#menu-' + menu[i];
+    var re = new RegExp('^[/]' + menu[i]);
+
+    if (path.match(re)) {
+      $(tab).addClass('active');
+    } else {
+      $(tab).removeClass('active');
+    }
+  }
+};
+
+$(document).ready(selectedTab);
+$(document).on('page:load', selectedTab);
