@@ -28,6 +28,14 @@
           <ul class="left">
 
             <li class="has-dropdown">
+              <a href="#">Eventos</a>
+              <ul class="dropdown">
+                <li><%= link_to 'Criar novo', new_evento_path %></li>
+                <li><%= link_to 'Lista todos', eventos_path %></a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
               <a href="#">Clientes</a>
               <ul class="dropdown">
                 <li><%= link_to 'Criar novo', new_cliente_path %></li>

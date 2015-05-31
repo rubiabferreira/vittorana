@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Cliente:</strong>
+  <%= @evento.cliente.nome %>
+</p>
+
+<p>
   <strong>Inicio:</strong>
   <%= @evento.inicio %>
 </p>
@@ -11,8 +16,9 @@
 </p>
 
 <p>
-  <strong>Cortesia:</strong>
-  <%= @evento.cortesia %>
+  <% if @evento.cortesia? %>
+  <%= "<strong>Este evento é uma cortesia</strong>".html_safe %>
+  <% end %>
 </p>
 
 <p>
