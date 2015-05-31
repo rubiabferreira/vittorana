@@ -12,105 +12,119 @@
   <% end %>
   <fieldset>
     <legend>Cliente</legend>
-
-    <div>
-      <%= f.label :cliente_id, 'Nome' %>
-      <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente' }) %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :cliente_id, 'Nome' %>
+        <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente' }) %>
+      </div>
     </div>
   </fieldset>
 
   <fieldset>
   <legend>Duração</legend>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :inicio, 'Início' %>
+        <%= f.text_field :inicio %>
+      </div>
 
-    <div class="field">
-      <%= f.label :inicio, 'Início' %>
-      <%= f.text_field :inicio %>
-    </div>
-
-    <div class="field">
-      <%= f.label :fim, 'Fim' %>
-      <%= f.text_field :fim %>
+      <div class="small-12 columns">
+        <%= f.label :fim, 'Fim' %>
+        <%= f.text_field :fim %>
+      </div>
     </div>
   </fieldset>
 
   <fieldset>
     <legend>Quantidade de pessoas</legend>
 
-    <div class="field">
-      <%= f.label :num_criancas, 'Crianças' %>
-      <%= f.number_field :num_criancas %>
-    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :num_criancas, 'Crianças' %>
+        <%= f.number_field :num_criancas %>
+      </div>
 
-    <div class="field">
-      <%= f.label :num_adultos, 'Adultos' %>
-      <%= f.number_field :num_adultos %>
+      <div class="small-12 columns">
+        <%= f.label :num_adultos, 'Adultos' %>
+        <%= f.number_field :num_adultos %>
+      </div>
     </div>
   </fieldset>
 
   <fieldset>
     <legend>Tema</legend>
 
-     <div>
-        <%= f.label :tema_id, 'Nome' %>
-        <%= f.collection_select(:tema_id, Tema.all, :id, :nome, { prompt: 'Escolha o tema' }) %>
+    <div class="row">
+       <div class="small-12 columns">
+          <%= f.label :tema_id, 'Nome' %>
+          <%= f.collection_select(:tema_id, Tema.all, :id, :nome, { prompt: 'Escolha o tema' }) %>
+        </div>
       </div>
   </fieldset>
 
   <fieldset>
     <legend>Contratual</legend>
 
-    <div class="field">
-      <%= f.label :cortesia, 'Cortesia?' %>
-      <%= f.check_box :cortesia %>
-    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :cortesia, 'Cortesia?' %>
+        <%= f.check_box :cortesia %>
+      </div>
 
-    <div class="field">
-      <%= f.label :consumacao, 'Consumação' %>
-      <%= f.text_field :consumacao %>
-    </div>
+      <div class="small-12 columns">
+        <%= f.label :consumacao, 'Consumação' %>
+        <%= f.text_field :consumacao %>
+      </div>
 
-    <div class="field">
-      <%= f.label :itens_avulsos, 'Itens Avulsos' %>
-      <%= f.number_field :itens_avulsos %>
+      <div class="small-12 columns">
+        <%= f.label :itens_avulsos, 'Itens Avulsos' %>
+        <%= f.number_field :itens_avulsos %>
+      </div>
     </div>
   </fieldset>
 
   <fieldset>
     <legend>Financeiro</legend>
 
-    <div class="field">
-      <%= f.label :entrada, 'Entrada' %>
-      <%= f.text_field :entrada %>
-    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :entrada, 'Entrada' %>
+        <%= f.text_field :entrada %>
+      </div>
 
-    <div class="field">
-      <%= f.label :desconto, 'Desconto' %>
-      <%= f.text_field :desconto %>
-    </div>
+      <div class="small-12 columns">
+        <%= f.label :desconto, 'Desconto' %>
+        <%= f.text_field :desconto %>
+      </div>
 
-    <div class="field">
-      <%= f.label :forma_pagamento, 'Forma de pagamento' %>
-      <%= f.text_field :forma_pagamento %>
+      <div class="small-12 columns">
+        <%= f.label :forma_pagamento, 'Forma de pagamento' %>
+        <%= f.text_field :forma_pagamento %>
+      </div>
     </div>
   </fieldset>
 
   <fieldset>
     <legend>Documentação</legend>
 
-    <div class="field">
-      <%= f.label :contrato, 'Gerar contrato?' %>
-      <%= f.check_box :contrato %>
-    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :contrato, 'Gerar contrato?' %>
+        <%= f.check_box :contrato %>
+      </div>
 
-    <div class="field">
-      <%= f.label :documento, 'Número do documento' %>
-      <%= f.text_field :documento %>
+      <div class="small-12 columns">
+        <%= f.label :documento, 'Número do documento' %>
+        <%= f.text_field :documento %>
+      </div>
     </div>
   </fieldset>
 
-  <div class="field">
-    <%= f.label :obs %>
-    <%= f.text_area :obs %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :obs %>
+      <%= f.text_area :obs %>
+    </div>
   </div>
 
   <div>
