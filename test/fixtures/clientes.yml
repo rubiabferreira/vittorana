@@ -1,63 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nome: MyString
-  conjuge: MyString
-  endereco: MyString
-  bairro: MyString
-  cep: MyString
+brad_e_angelina:
+  nome: Brad Pitt
+  conjuge: Angelina Jolie
+  endereco: EUA
+  bairro: Bairro dos atores
+  cep: 12.345-678
   estado_id: 1
   cidade_id: 1
-  tresidencial: MyString
-  tcelular: MyString
-  cpf: MyString
-  rg: MyString
-  evento: false
-  horario_festa: 2015-04-08 01:42:18
-  duracao_festa: MyString
-  dia_semana: 1
-  cortesia: false
-  valor_consumacao: 1.5
-  itens_avulsos: 1
-  data_evento: 2015-04-08
-  qtde_criancas: 1
-  qtde_adultos: 1
-  tema: 1
-  gerar_contrato: false
-  valor: 1.5
-  num_documento: MyString
-  desconto: 1.5
-  entrada: 1.5
-  forma_pagamento: MyString
-  obs: MyText
+  tresidencial: (12) 3456-7890
+  tcelular: (12) 3456-7890
+  cpf: 123.456.789-10
+  rg: 123456
 
-two:
-  nome: MyString
-  conjuge: MyString
-  endereco: MyString
-  bairro: MyString
-  cep: MyString
+luciano_huck_e_angelica:
+  nome: Luciano Huck
+  conjuge: Angélica
+  endereco: Rua dos globais
+  bairro: Bairro dos artistas
+  cep: 12.345-678
   estado_id: 1
   cidade_id: 1
-  tresidencial: MyString
-  tcelular: MyString
-  cpf: MyString
-  rg: MyString
-  evento: false
-  horario_festa: 2015-04-08 01:42:18
-  duracao_festa: MyString
-  dia_semana: 1
-  cortesia: false
-  valor_consumacao: 1.5
-  itens_avulsos: 1
-  data_evento: 2015-04-08
-  qtde_criancas: 1
-  qtde_adultos: 1
-  tema: 1
-  gerar_contrato: false
-  valor: 1.5
-  num_documento: MyString
-  desconto: 1.5
-  entrada: 1.5
-  forma_pagamento: MyString
-  obs: MyText
+  tresidencial: (12) 3456-7890
+  tcelular: (12) 3456-7890
+  cpf: 123.456.789-10
+  rg: 123456
