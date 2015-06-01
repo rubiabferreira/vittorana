@@ -4,4 +4,7 @@ class Cliente < ActiveRecord::Base
 
   has_many :eventos, dependent: :destroy
   has_many :contas_a_receber
+
+  validates :nome, :estado, :cidade, presence: :true
+
 end
