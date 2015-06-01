@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cliente_id %><br>
-    <%= f.number_field :cliente_id %>
+    <%= f.label :cliente_id %>
+    <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente'}) %>
   </div>
   <div class="field">
-    <%= f.label :vencimento %><br>
-    <%= f.date_select :vencimento %>
+    <%= f.label :vencimento %>
+    <%= f.text_field :vencimento %>
   </div>
   <div class="field">
-    <%= f.label :valor %><br>
+    <%= f.label :valor %>
     <%= f.text_field :valor %>
   </div>
   <div class="actions">
