@@ -11,15 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :tipo %><br>
+  <fieldset>
+    <legend>Identificação</legend>
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+    <%= f.label :tipo, 'Tipo' %><br>
     <%= f.text_field :tipo %>
   </div>
-  <div class="field">
-    <%= f.label :observacao %><br>
-    <%= f.text_field :observacao %>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-6 columns">
+  <%= f.label :observacao , 'Observação' %><br>
+  <%= f.text_field :observacao %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+</div>
+  </fieldset>
+
+  <div>
+    <%= f.submit 'Salvar' , class: 'button' %>
   </div>
 <% end %>

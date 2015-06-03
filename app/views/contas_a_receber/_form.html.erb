@@ -11,19 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cliente_id %>
+   <fieldset>
+    <legend>Identificação</legend>
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+    <%= f.label :cliente_id , 'Selecionar Cliente' %>
     <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente'}) %>
   </div>
-  <div class="field">
-    <%= f.label :vencimento %>
+  </div>
+
+
+ <div class="row">
+  <div class="small-12 medium-6 columns">
+    <%= f.label :vencimento , 'Vencimento' %>
     <%= f.text_field :vencimento %>
   </div>
-  <div class="field">
-    <%= f.label :valor %>
+  </div>
+
+
+ <div class="row">
+  <div class="small-12 medium-6 columns">
+    <%= f.label :valor, 'Valor' %>
     <%= f.text_field :valor %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  </div>
+
+  </fieldset>
+
+
+  <div>
+    <%= f.submit 'Salvar' , class: 'button' %>
   </div>
 <% end %>
