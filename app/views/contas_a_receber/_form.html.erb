@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cliente_id %>
-    <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente'}) %>
+  <div class="row">
+    <div class="small-12 medium-12 columns">
+      <%= f.label :cliente_id %>
+      <%= f.collection_select(:cliente_id, Cliente.all, :id, :nome, { prompt: 'Escolha o cliente'}) %>
+    </div>
+    <div class="small-12 medium-6 columns">
+      <%= f.label :vencimento %>
+      <%= f.text_field :vencimento %>
+    </div>
+    <div class="small-12 medium-6 columns">
+      <%= f.label :valor %>
+      <%= f.text_field :valor %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :vencimento %>
-    <%= f.text_field :vencimento %>
-  </div>
-  <div class="field">
-    <%= f.label :valor %>
-    <%= f.text_field :valor %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit 'Salvar', class: 'button' %>
   </div>
 <% end %>
