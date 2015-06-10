@@ -11,71 +11,102 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nomefantasia %><br>
-    <%= f.text_field :nomefantasia %>
-  </div>
-  <div class="field">
-    <%= f.label :razaosocial %><br>
-    <%= f.text_field :razaosocial %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :bairro %><br>
-    <%= f.text_field :bairro %>
-  </div>
-  <div class="field">
-    <%= f.label :cep %><br>
-    <%= f.text_field :cep %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.collection_select :estado, Estado.all, :id, :nome, { prompt: true }%>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <% if @fornecedor.estado.nil? %>
-    <%= raw('<select id="fornecedor_cidade" name="fornecedor[cidade]"></select') %>
-    <% else %>
-    <%= f.collection_select :cidade, @fornecedor.estado.try(:cidade), :id, :nome %>
-    <% end %>
-  </div>
-  <div class="field">
-    <%= f.label :tcomercial %><br>
+<fieldset>
+
+<legend>Identificação</legend>
+<div class="row">
+<div class="small-12 medium-6 columns">
+<%= f.label :nomefantasia, 'Nome Fantasia' %><br>
+<%= f.text_field :nomefantasia %>
+</div>
+
+<div class="small-12 medium-6 columns">
+<%= f.label :razaosocial, 'Razão Social' %><br>
+<%= f.text_field :razaosocial %>
+</div>
+
+<div class="small-12 medium-6 columns">
+<%= f.label :im, 'Inscrição Municipal' %><br>
+<%= f.text_field :im %>
+</div>
+
+<div class="small-12 medium-6 columns">
+<%= f.label :cnpj, 'CNPJ' %><br>
+<%= f.text_field :cnpj %>
+</div>
+
+<div class="small-12 medium-6 columns">
+<%= f.label :ie, 'Inscrição Estadual' %><br>
+<%= f.text_field :ie %>
+</div>
+
+<div class="small-12 medium-6 columns">
+<%= f.label :categoria_id, 'Categoria' %><br>
+<%= f.number_field :categoria_id %>
+</div>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Endereço</legend>
+<div class="row">
+<div class="small-12 medium-6 columns">
+<%= f.label :endereco, 'Endereço' %><br>
+<%= f.text_field :endereco %>
+</div>
+
+<div class="small-12 medium-3 columns">
+<%= f.label :bairro, 'Bairro' %><br>
+<%= f.text_field :bairro %>
+</div>
+<div class="small-12 medium-3 columns">
+<%= f.label :cep, 'CEP' %><br>
+<%= f.text_field :cep %>
+</div>
+
+<div class="small-4 medium-2 columns">
+<%= f.label :estado, "Estado" %><br>
+<%= f.collection_select :estado, Estado.all, :id, :nome, { prompt: true }%>
+</div>
+
+<div class="small-8 medium-5 end columns">
+<%= f.label :cidade, 'Cidade' %><br>
+<% if @fornecedor.estado.nil? %>
+<%= raw('<select id="fornecedor_cidade" name="fornecedor[cidade]"></select') %>
+<% else %>
+<%= f.collection_select :cidade, @fornecedor.estado.try(:cidade), :id, :nome %>
+<% end %>
+</div>
+</div>
+</fieldset>
+
+
+ <fieldset>
+      <legend>Contato</legend>
+        <div class="row">
+        <div class="small-12 medium-3 columns">
+    <%= f.label :tcomercial, "Telefone Comercial" %><br>
     <%= f.text_field :tcomercial %>
   </div>
-  <div class="field">
-    <%= f.label :tcelular %><br>
+    <div class="small-12 medium-3 end columns">
+    <%= f.label :tcelular, 'Telefone Celular' %><br>
     <%= f.text_field :tcelular %>
   </div>
-  <div class="field">
-    <%= f.label :cnpj %><br>
-    <%= f.text_field :cnpj %>
-  </div>
-  <div class="field">
-    <%= f.label :ie %><br>
-    <%= f.text_field :ie %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
+
+
+   <div class="small-12 medium-3 end columns">
+    <%= f.label :email , 'E-mail' %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :im %><br>
-    <%= f.text_field :im %>
-  </div>
-  <div class="field">
-    <%= f.label :site %><br>
+
+    <div class="small-12 medium-3 end columns">
+    <%= f.label :site , 'Site' %><br>
     <%= f.text_field :site %>
   </div>
-  <div class="field">
-    <%= f.label :categoria_id %><br>
-    <%= f.number_field :categoria_id %>
+
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  </fieldset>
+  <div >
+    <%= f.submit 'Salvar' , class: 'button' %>
   </div>
 <% end %>

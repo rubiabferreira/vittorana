@@ -11,19 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :fornecedor_id %><br>
+  <fieldset>
+    <legend>Identificação</legend>
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+    <%= f.label :fornecedor_id, 'Selecionar Fornecedor'  %><br>
     <%= f.number_field :fornecedor_id %>
   </div>
-  <div class="field">
-    <%= f.label :vencimento %><br>
-    <%= f.date_select :vencimento %>
   </div>
-  <div class="field">
-    <%= f.label :valor %><br>
+
+
+  <div class="row">
+  <div class="small-12 medium-6 columns">
+    <%= f.label :vencimento , 'Vencimento' %>
+    <%= f.text_field :vencimento %>
+  </div>
+  </div>
+
+   <div class="row">
+  <div class="small-12 medium-6 columns">
+    <%= f.label :valor, 'Valor' %><br>
     <%= f.text_field :valor %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  </div>
+
+</fieldset>
+
+   <div>
+    <%= f.submit 'Salvar' , class: 'button' %>
   </div>
 <% end %>
