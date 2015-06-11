@@ -12,15 +12,20 @@ class ContasAReceberController < ApplicationController
   def show
   end
 
-  # GET /contas_a_receber/new
+  # GET /contas_a_receber/nova
   def new
     @conta_a_receber = ContaAReceber.new
   end
 
-  # GET /contas_a_receber/1/edit
+  # GET /contas_a_receber/1/editar
   def edit
   end
 
+  # GET /contas_a_receber/evento/1
+  def evento
+    evento = Evento.find_by(id: params[:id])
+    @conta_a_receber = ContaAReceber.new(cliente: evento.cliente, valor: evento.valor_a_pagar)
+  end
   # POST /contas_a_receber
   # POST /contas_a_receber.json
   def create
