@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :clientes, path_names: { new: 'novo', edit: 'editar'}
 
   get 'estados/:id/cidades' => 'estados#cidades', as: :cidades_do_estado
+
+  get 'contas_a_receber/evento/:id' => 'contas_a_receber#evento', as: :contas_a_receber_do_evento
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
