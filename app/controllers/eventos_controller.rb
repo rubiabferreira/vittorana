@@ -26,14 +26,10 @@ class EventosController < ApplicationController
   def create
     @evento = Evento.new(evento_params)
 
-    respond_to do |format|
-      if @evento.save
-        format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
-        format.json { render :show, status: :created, location: @evento }
-      else
-        format.html { render :new }
-        format.json { render json: @evento.errors, status: :unprocessable_entity }
-      end
+    if @evento.save
+      redirect_to contas_a_receber_do_evento_path @evento
+    else
+      respond_to action: :new
     end
   end
 
