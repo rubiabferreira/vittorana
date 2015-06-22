@@ -29,7 +29,7 @@ class EventosController < ApplicationController
     if @evento.save
       redirect_to contas_a_receber_do_evento_path @evento
     else
-      respond_to action: :new
+      render :new
     end
   end
 
