@@ -15,8 +15,9 @@
   <tbody>
     <% @eventos.each do |evento| %>
       <tr>
-        <td><%= evento.inicio %></td>
-        <td><%= evento.fim %></td>
+
+        <td><%= evento.inicio.strftime("%c") %></td>
+        <td><%= evento.fim.strftime("%c") %></td>
         <td><%= evento.cliente.nome %></td>
         <td><%= link_to 'Exibir', evento %></td>
         <td><%= link_to 'Editar', edit_evento_path(evento) %></td>

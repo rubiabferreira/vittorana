@@ -9,3 +9,16 @@ class Evento < ActiveRecord::Base
     self.entrada - self.desconto
   end
 end
+
+def print_strftime_formats(a,cur_date)
+    a.each do |format|
+        b = "%#{format}"
+        output = cur_date.strftime(b)
+        puts "t.strftime('#{b}'), => #{output}"
+    end
+end
+
+a = ('a'..'z').to_a
+A = ('A'..'Z').to_a
+
+cur_date = Time.now

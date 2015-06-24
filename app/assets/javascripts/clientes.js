@@ -12,6 +12,15 @@ var carregaValidacoes = function () {
   $('#cliente_tcelular').inputmask("(99) 9999-9999");
 };
 
+$(document).ready(function(){
+   $('#cliente_cep').inputmask("99.999-999");
+   $('#cliente_tcelular').inputmask("(99) 9999-9999");
+   $('#cliente_tresidencial').inputmask("(99) 9999-9999");
+   $('#cliente_cpf').inputmask("999.999.999-99");
+});
+
+
+
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
